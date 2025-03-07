@@ -23,7 +23,7 @@ onMounted(() => {
     />
   </div>
   <div class="paginator">
-    <PrevNextButton button-text="Anterior" />
+    <PrevNextButton @click="seeArray.prevPage" button-text="Anterior" />
     <PagesButton />
     <PrevNextButton @click="seeArray.nextPage" button-text="Próxima" />
   </div>

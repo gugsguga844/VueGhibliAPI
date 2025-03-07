@@ -12,12 +12,14 @@ export const useFilterFilmsStore = defineStore('filterFilms', () => {
     if (startValue.value >= 0 || endValue.value >= 4) {
       startValue.value -= 4
       endValue.value -= 4
+      filteredFilms()
     }
   }
 
   function nextPage() {
     startValue.value += 4
     endValue.value += 4
+    filteredFilms()
   }
 
   function filteredFilms() {
