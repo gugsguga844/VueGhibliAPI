@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="header-menu-nav">
     <h1>The Studio Ghibli Collection</h1>
     <ul class="nav-ul">
       <li class="header-nav-item">
@@ -27,7 +27,7 @@
 h1 {
   color: white;
 }
-nav {
+.header-menu-nav {
   display: flex;
   justify-content: space-between;
   padding: 50px;

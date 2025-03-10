@@ -16,6 +16,11 @@ defineProps(['image', 'title'])
 <style>
 .card {
   width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    4px 4px 8px 0 rgba(0, 0, 0, 0.5),
+    4px 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card-content {

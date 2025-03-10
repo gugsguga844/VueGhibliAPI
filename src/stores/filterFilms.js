@@ -3,13 +3,13 @@ import { defineStore } from 'pinia'
 import { getAllFilms } from '@/services/HttpService'
 
 export const useFilterFilmsStore = defineStore('filterFilms', () => {
-  const films = ref({})
-  const filteredFilmsList = ref({})
+  const films = ref([])
+  const filteredFilmsList = ref([])
   let startValue = ref(0)
   let endValue = ref(4)
 
   function prevPage() {
-    if (startValue.value >= 0 || endValue.value >= 4) {
+    if (startValue.value > 0) {
       startValue.value -= 4
       endValue.value -= 4
       filteredFilms()
@@ -17,9 +17,11 @@ export const useFilterFilmsStore = defineStore('filterFilms', () => {
   }
 
   function nextPage() {
-    startValue.value += 4
-    endValue.value += 4
-    filteredFilms()
+    if (startValue.value < films.value.length - 4) {
+      startValue.value += 4
+      endValue.value += 4
+      filteredFilms()
+    }
   }
 
   function filteredFilms() {

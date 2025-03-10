@@ -1,13 +1,14 @@
 <script setup>
+import ExhibitionMenu from './components/ExhibitionMenu.vue'
 import HeaderMenu from './components/HeaderMenu.vue'
-import FilmsView from './views/FilmsView.vue'
+import MainFooter from './components/MainFooter.vue'
 </script>
 
 <template>
   <header>
     <HeaderMenu />
   </header>
-  <main><FilmsView /></main>
+  <main><ExhibitionMenu /> <RouterView /> <MainFooter /></main>
   <footer></footer>
 </template>
 
@@ -19,6 +20,7 @@ header {
 }
 
 main {
-  padding: 100px;
+  padding: 0px 100px;
+  height: 100vh;
 }
 </style>

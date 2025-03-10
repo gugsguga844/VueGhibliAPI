@@ -13,5 +13,6 @@
   color: white;
   border: none;
   font-weight: bold;
+  margin: 0px 3px;
 }
 </style>
