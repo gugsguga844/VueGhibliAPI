@@ -20,6 +20,9 @@ header {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 0px 100px;
   height: 100vh;
 }
