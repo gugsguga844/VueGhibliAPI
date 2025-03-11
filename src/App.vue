@@ -1,28 +1,30 @@
 <script setup>
-import ExhibitionMenu from './components/ExhibitionMenu.vue'
+import HeaderContent from './components/HeaderContent.vue'
 import HeaderMenu from './components/HeaderMenu.vue'
-import MainFooter from './components/MainFooter.vue'
 </script>
 
 <template>
   <header>
     <HeaderMenu />
+    <HeaderContent />
   </header>
-  <main><ExhibitionMenu /> <RouterView /> <MainFooter /></main>
+  <main><RouterView /></main>
   <footer></footer>
 </template>
 
 <style scoped>
 header {
-  background-image: url(../src/assets/Studio-Ghibli-Logo.webp);
+  background-image: url(../src/assets/1198914-2560x1440-desktop-hd-studio-ghibli-wallpaper-photo.jpg);
   background-size: cover;
   height: 100vh;
+  z-index: 999;
 }
 
 main {
+  background-color: #bcfdbc;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0px 100px;
   height: 100vh;
 }

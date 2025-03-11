@@ -7,7 +7,7 @@ const isActive = ref(true)
 <template>
   <nav class="main-nav">
     <ul class="main-nav-ul">
-      <RouterLink class="router-options" to="/films">
+      <RouterLink class="router-options" to="/">
         <li class="main-nav-ul-li" :class="{ selected: isActive }">Filmes</li>
       </RouterLink>
       <RouterLink class="router-options" to="/people">
@@ -40,7 +40,7 @@ const isActive = ref(true)
   padding: 5px;
 }
 
-.router-link-active {
+.router-options.router-link-active {
   color: black;
   width: 100%;
   border-bottom: solid 2px;

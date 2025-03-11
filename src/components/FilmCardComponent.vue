@@ -14,6 +14,7 @@ defineProps(['image', 'title'])
 </template>
 
 <style>
+@import url(../assets/main.css);
 .card {
   width: 100%;
   border-radius: 20px;
@@ -36,7 +37,7 @@ img {
 }
 
 .card-footer {
-  background-color: #1ba0d0;
+  background-color: var(--main-color);
   padding: 10px;
   color: white;
   text-align: center;

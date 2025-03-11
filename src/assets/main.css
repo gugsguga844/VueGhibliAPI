@@ -1,1 +1,5 @@
 @import './base.css';
+
+:root {
+  --main-color: #004b66;
+}
