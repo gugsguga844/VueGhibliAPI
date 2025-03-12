@@ -35,7 +35,7 @@ defineProps(['name', 'gender', 'age', 'eye_color'])
 }
 
 .info-card-content {
-  background-color: #1ba0d0;
+  background-color: var(--main-color);
   padding: 10px;
   color: white;
   text-align: center;

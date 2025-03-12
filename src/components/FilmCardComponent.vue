@@ -22,6 +22,11 @@ defineProps(['image', 'title'])
   box-shadow:
     4px 4px 8px 0 rgba(0, 0, 0, 0.5),
     4px 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.07);
 }
 
 .card-content {

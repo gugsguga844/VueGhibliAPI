@@ -1,5 +1,10 @@
 @import './base.css';
 
+@font-face {
+  font-family: 'Ghibli';
+  src: url('../assets/fonts/Ghibli.otf') format('opentype');
+}
+
 :root {
   --main-color: #004b66;
 }

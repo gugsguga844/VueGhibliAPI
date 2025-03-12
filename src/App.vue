@@ -18,10 +18,12 @@ header {
   background-size: cover;
   height: 100vh;
   z-index: 999;
+  background-color: rgba(255, 255, 255, 0.3);
+  background-blend-mode: lighten;
 }
 
 main {
-  background-color: #bcfdbc;
+  background-color: #d3f4fa;
   display: flex;
   flex-direction: column;
   justify-content: center;
