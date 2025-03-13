@@ -4,6 +4,9 @@ defineProps(['image', 'title'])
 
 <template>
   <div class="card">
+    <div class="favorite-icon" @click="toggleFavorite">
+      <i :class="isFavorite ? 'fa-solid fa-star' : 'fa-regular fa-star fa-lg'"></i>
+    </div>
     <div class="card-content">
       <img :src="image" />
     </div>
@@ -23,10 +26,28 @@ defineProps(['image', 'title'])
     4px 4px 8px 0 rgba(0, 0, 0, 0.5),
     4px 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: 0.5s ease;
+  position: relative;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease;
+  z-index: 2; /* Garante que fique acima da linha diagonal */
+}
+
+.fa-star {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
 }
 
 .card:hover {
-  transform: scale(1.07);
+  transform: scale(1.06);
+  cursor: pointer;
 }
 
 .card-content {
@@ -51,5 +72,17 @@ img {
 span {
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px; /* Largura da faixa */
+  height: 60px; /* Altura da faixa */
+  background: rgb(255, 255, 255, 0.4);
+  transform: rotate(45deg) translate(20px, -35px);
+  z-index: 1;
 }
 </style>

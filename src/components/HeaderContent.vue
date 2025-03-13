@@ -24,6 +24,12 @@
   justify-content: space-evenly;
 }
 
+.header-title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header-title {
   font-size: 3rem;
   font-family: 'Ghibli';
@@ -36,6 +42,8 @@
   color: #313131;
   line-height: 1.6;
   font-family: 'Ghibli';
+  text-align: center;
+  font-weight: bold;
 }
 
 .explore-btn {

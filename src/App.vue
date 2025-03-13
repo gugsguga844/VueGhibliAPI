@@ -23,7 +23,7 @@ header {
 }
 
 main {
-  background-color: #d3f4fa;
+  background-color: #dfeeff;
   display: flex;
   flex-direction: column;
   justify-content: center;

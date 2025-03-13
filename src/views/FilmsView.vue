@@ -11,8 +11,6 @@ const favStore = useFavoritesStore()
 
 onMounted(() => {
   seeArray.getFilms()
-  seeArray.filteredFilmsList
-  favStore.addFavorite()
 })
 </script>
 
