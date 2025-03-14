@@ -1,5 +1,6 @@
 <script setup>
 import FilmCardComponent from '@/components/FilmCardComponent.vue'
+import NoFavoritesMessage from '@/components/NoFavoritesMessage.vue'
 import PagesButton from '@/components/PagesButton.vue'
 import PrevNextButton from '@/components/PrevNextButton.vue'
 import { useFavoritesStore } from '@/stores/favorites'
@@ -22,6 +23,8 @@ const hasFavorites = computed(() => {
         :key="favorite.id"
         :image="favorite.image"
         :title="favorite.title"
+        :isFavorite="favList.isFavorite(favorite)"
+        @click="favList.addOrRemoveFavorite(favorite)"
       />
     </div>
 
@@ -34,7 +37,7 @@ const hasFavorites = computed(() => {
     </div>
   </div>
   <div class="if-wrapper" v-else>
-    <h1>Você ainda não favoritou nenhum filme :(</h1>
+    <NoFavoritesMessage />
   </div>
 </template>
 
