@@ -1,11 +1,11 @@
 <script setup>
-defineProps(['image', 'title'])
+defineProps(['image', 'title', 'isFavorite'])
 </script>
 
 <template>
   <div class="card">
-    <div class="favorite-icon" @click="toggleFavorite">
-      <i :class="isFavorite ? 'fa-solid fa-star' : 'fa-regular fa-star fa-lg'"></i>
+    <div class="favorite-icon">
+      <i :class="isFavorite ? 'fa-solid fa-star fa-lg' : 'fa-regular fa-star fa-lg'"></i>
     </div>
     <div class="card-content">
       <img :src="image" />
@@ -81,7 +81,7 @@ span {
   right: 0;
   width: 120px; /* Largura da faixa */
   height: 60px; /* Altura da faixa */
-  background: rgb(255, 255, 255, 0.4);
+  background: rgba(255, 251, 0);
   transform: rotate(45deg) translate(20px, -35px);
   z-index: 1;
 }

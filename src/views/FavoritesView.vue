@@ -8,28 +8,33 @@ import { computed } from 'vue'
 const favList = useFavoritesStore()
 
 const hasFavorites = computed(() => {
-  return favList.favorites.length > 4
+  return favList.favorites.length > 0
 })
 </script>
 
 <template>
-  <h1 class="page-title">Seus Filmes Favoritos</h1>
+  <div class="if-wrapper" v-if="hasFavorites">
+    <h1 class="page-title">Seus Filmes Favoritos</h1>
 
-  <div class="cards">
-    <FilmCardComponent
-      v-for="favorite in favList.filteredFavorites"
-      :key="favorite.id"
-      :image="favorite.image"
-      :title="favorite.title"
-    />
+    <div class="cards">
+      <FilmCardComponent
+        v-for="favorite in favList.filteredFavorites"
+        :key="favorite.id"
+        :image="favorite.image"
+        :title="favorite.title"
+      />
+    </div>
+
+    <div class="paginator" v-if="hasFavorites">
+      <PrevNextButton @click="favList.prevPage" button-text="Anterior" />
+      <PagesButton />
+
+      <PagesButton />
+      <PrevNextButton @click="favList.nextPage" button-text="Próxima" />
+    </div>
   </div>
-
-  <div class="paginator" v-if="hasFavorites">
-    <PrevNextButton @click="favList.prevPage" button-text="Anterior" />
-    <PagesButton />
-
-    <PagesButton />
-    <PrevNextButton @click="favList.nextPage" button-text="Próxima" />
+  <div class="if-wrapper" v-else>
+    <h1>Você ainda não favoritou nenhum filme :(</h1>
   </div>
 </template>
 
@@ -37,6 +42,10 @@ const hasFavorites = computed(() => {
 .page-title {
   text-align: center;
   margin: 20px;
+  background-color: yellow;
+  color: black;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 .cards {

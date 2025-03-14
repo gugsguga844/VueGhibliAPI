@@ -6,18 +6,17 @@ export const useFavoritesStore = defineStore('favorites', () => {
   let startValue = ref(0)
   let endValue = ref(4)
 
-  function addFavorite(film) {
-    if (!favorites.value.includes(film)) {
+  function addOrRemoveFavorite(film) {
+    const index = favorites.value.findIndex((f) => f.id === film.id)
+    if (index === -1) {
       favorites.value = [...favorites.value, film]
-      console.log(favorites.value)
+    } else {
+      favorites.value.splice(index, 1)
     }
   }
 
-  function removeFavorite(film) {
-    if (favorites.value.includes(film)) {
-      favorites.value = [...favorites.value.splice(film, 1)]
-      console.log(favorites.value)
-    }
+  function isFavorite(film) {
+    return favorites.value.some((f) => f.id === film.id)
   }
 
   function prevPage() {
@@ -38,5 +37,12 @@ export const useFavoritesStore = defineStore('favorites', () => {
     return favorites.value.slice(startValue.value, endValue.value)
   })
 
-  return { favorites, filteredFavorites, addFavorite, removeFavorite, prevPage, nextPage }
+  return {
+    favorites,
+    filteredFavorites,
+    addOrRemoveFavorite,
+    isFavorite,
+    prevPage,
+    nextPage,
+  }
 })

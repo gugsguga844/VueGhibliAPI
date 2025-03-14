@@ -9,19 +9,26 @@ import { onMounted } from 'vue'
 const seeArray = useFilterFilmsStore()
 const favStore = useFavoritesStore()
 
+function clicked(film) {
+  favStore.addOrRemoveFavorite(film)
+}
+
 onMounted(() => {
   seeArray.getFilms()
 })
 </script>
 
 <template>
+  <h1 class="films-title">Filmes</h1>
+
   <div class="cards">
     <FilmCardComponent
       v-for="film in seeArray.filteredFilmsList"
       :key="film.id"
       :image="film.image"
       :title="film.title"
-      @click="favStore.addFavorite(film)"
+      :isFavorite="favStore.isFavorite(film)"
+      @click="clicked(film)"
     />
   </div>
   <div class="paginator">
@@ -34,6 +41,15 @@ onMounted(() => {
 </template>
 
 <style>
+.films-title {
+  text-align: center;
+  margin: 20px;
+  background-color: blue;
+  color: white;
+  border-radius: 20px;
+  padding: 10px;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

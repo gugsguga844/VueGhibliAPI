@@ -28,7 +28,8 @@
     <ul class="nav-ul">
       <RouterLink class="favorites-route" to="/favorites">
         <li id="favorites-button" class="header-nav-item">
-          <span class="favorites-span">FAVORITADOS</span>
+          <i class="fa-solid fa-star"></i>
+          <span class="header-menu-span">FAVORITADOS</span>
         </li>
       </RouterLink>
       <li class="header-nav-item">
