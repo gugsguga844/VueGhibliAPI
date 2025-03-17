@@ -3,9 +3,15 @@ defineProps(['image', 'title', 'isFavorite'])
 </script>
 
 <template>
-  <div class="card">
+  <div class="card" :class="{ favorite: isFavorite }">
     <div class="favorite-icon">
-      <i :class="isFavorite ? 'fa-solid fa-star fa-lg' : 'fa-regular fa-star fa-lg'"></i>
+      <i
+        :class="
+          isFavorite
+            ? 'fa-solid fa-star fa-lg star-selected'
+            : 'fa-regular fa-star fa-lg star-unselected'
+        "
+      ></i>
     </div>
     <div class="card-content">
       <img :src="image" />
@@ -27,6 +33,10 @@ defineProps(['image', 'title', 'isFavorite'])
     4px 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: 0.5s ease;
   position: relative;
+}
+
+.card.favorite {
+  background-color: yellow; /* Quando for favorito */
 }
 
 .favorite-icon {
@@ -81,8 +91,12 @@ span {
   right: 0;
   width: 120px; /* Largura da faixa */
   height: 60px; /* Altura da faixa */
-  background: rgba(255, 251, 0);
   transform: rotate(45deg) translate(20px, -35px);
+  background: white;
   z-index: 1;
+}
+
+.card.favorite::before {
+  background: yellow; /* Altera a cor da faixa quando favorito */
 }
 </style>

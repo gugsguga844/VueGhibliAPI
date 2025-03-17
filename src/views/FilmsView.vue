@@ -1,6 +1,5 @@
 <script setup>
 import FilmCardComponent from '@/components/FilmCardComponent.vue'
-import PagesButton from '@/components/PagesButton.vue'
 import PrevNextButton from '@/components/PrevNextButton.vue'
 import { useFavoritesStore } from '@/stores/favorites'
 import { useFilterFilmsStore } from '@/stores/filterFilms'
@@ -33,9 +32,6 @@ onMounted(() => {
   </div>
   <div class="paginator">
     <PrevNextButton @click="seeArray.prevPage" button-text="Anterior" />
-    <PagesButton />
-
-    <PagesButton />
     <PrevNextButton @click="seeArray.nextPage" button-text="Próxima" />
   </div>
 </template>

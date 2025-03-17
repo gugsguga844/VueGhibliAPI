@@ -1,7 +1,6 @@
 <script setup>
 import FilmCardComponent from '@/components/FilmCardComponent.vue'
 import NoFavoritesMessage from '@/components/NoFavoritesMessage.vue'
-import PagesButton from '@/components/PagesButton.vue'
 import PrevNextButton from '@/components/PrevNextButton.vue'
 import { useFavoritesStore } from '@/stores/favorites'
 import { computed } from 'vue'
@@ -30,9 +29,6 @@ const hasFavorites = computed(() => {
 
     <div class="paginator" v-if="hasFavorites">
       <PrevNextButton @click="favList.prevPage" button-text="Anterior" />
-      <PagesButton />
-
-      <PagesButton />
       <PrevNextButton @click="favList.nextPage" button-text="Próxima" />
     </div>
   </div>
